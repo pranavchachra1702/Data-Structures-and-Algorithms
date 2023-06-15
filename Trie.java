@@ -1,3 +1,5 @@
+//Time Complexity: O(L) where L is the length of word
+
 public class Classroom{
     static class Node{
         Node[] children;
