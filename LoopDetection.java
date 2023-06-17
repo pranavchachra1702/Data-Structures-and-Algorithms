@@ -21,7 +21,20 @@ public class LoopDetection {
         return null;
     }
     public static void main(String[] args) {
-        LinkedList<Integer> list = new LinkedList<>();
-        list.add(50);
+        LoopDetection list = new LoopDetection();
+        
+        list.head = new Node(50);
+        list.head.next = new Node(20);
+        list.head.next.next = new Node(15);
+        list.head.next.next.next = new Node(4);
+        list.head.next.next.next.next = new Node(20);
+        /*    head
+         *      50 --> 20 --> 15 --> 4 -->20
+         *                     |           |
+         *                     |___________|
+         */
+        head.next.next.next.next.next = head.next.next;
+        Node obj = detectFirstNode(head);
+        System.out.println(obj.data);
     }
 }
