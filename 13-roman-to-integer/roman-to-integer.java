@@ -25,7 +25,7 @@ class Solution
 
         return -1;
     }
-    public int romanToInt(String roman_number) 
+    /*public int romanToInt(String roman_number) 
     {
         int result = 0;
 
@@ -52,5 +52,21 @@ class Solution
         }
 
         return result;
+    }*/
+    public int romanToInt(String roman_number)
+    {
+        int ans = 0, num = 0;
+        for(int i = roman_number.length() - 1;i >= 0; i--)
+        {
+            num = value(roman_number.charAt(i));
+
+            if(4 * num < ans)
+            ans -= num;
+
+            else
+            ans += num;
+
+        }
+        return ans;
     }
 }
