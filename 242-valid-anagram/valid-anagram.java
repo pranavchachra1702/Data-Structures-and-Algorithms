@@ -2,9 +2,7 @@ class Solution
 {
     public boolean isAnagram(String s, String t) 
     {
-        if(s.length() != t.length())
-        return false;
-
+/*  Approach 1:
         Map<Character, Integer> map1=new HashMap<>();
 
         for(char x : s.toCharArray())
@@ -18,6 +16,20 @@ class Solution
             if(val != 0)
             return false;
         }
+
+*/
+    // Approach 2:
+    int count[] = new int[26];
+
+    for(char x : s.toCharArray())
+    count[x - 'a']++;
+
+    for(char x : t.toCharArray())
+    count[x - 'a']--;
+
+    for(int val : count)
+      if(val != 0)
+       return false;
 
         return true;
 
