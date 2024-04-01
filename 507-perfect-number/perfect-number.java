@@ -13,5 +13,8 @@ class Solution
 
         return false;
 
+        //Approach 2: 
+        //return num == 6 || num == 28 || num == 496 || num == 8128 || num == 33550336;
+
     }
 }
